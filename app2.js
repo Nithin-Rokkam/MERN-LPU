@@ -3,8 +3,8 @@
 // let fries = 70;
 // let gstOnFries = 0.05;
 // console.log("Total amount to be paid is: " + (juice + fries + (juice * gstOnjuice) + (fries * gstOnFries)));
-
-console.log("Start");
+let age = 22;
+console.log("Start", age);
 
 function calculateJuicebillAmount(){
     let juice = 50;
