@@ -163,3 +163,7 @@ console.log("College: ", college);
 //spread operator removes the reference i.e the outer layer of the object
 const person3 = {...person1}; // This creates a shallow copy of person1
 
+person2.name = {...person1};
+person2.name="Rajesh";
+console.log("After spread operator: ", person1, person2, person3);
+console.log("Are they same? ", person1 === person2); //return boolean
