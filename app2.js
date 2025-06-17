@@ -29,7 +29,7 @@ printBill("Fries", res2);
 
 console.log("End");
 
-// Arrow function version
+// Arrow function version  DAY2
 const FinalBill = (label, amount) => {
     console.log("--------------");
     console.log(label + ": " + amount);
@@ -40,14 +40,29 @@ const calculateBillAmountForFood = (price) => price * 1.05;
 const calculateBillAmountForClothes = (price) => price * 1.12;
 const calculateBillAmountForDrinks = (price) => price * 1.12;
 
-const finalBillAmount = (food, clothes, drinks) => {
+const calculateBillForFoodandDrinks = (txt) => {
+    console.log("Calculating bill for Food and drinks: " + txt);
+    return txt;
+};
+const calculateBillForFood = (txt) => {
+    console.log("Calculating bill for Food : " + txt);
+    return txt;
+};
+const calculateBillForAll = (txt) => {
+    console.log("Calculating bill for Food drinks and clothes : " + txt);
+    return txt;
+};
+
+const finalBillAmount = (food, clothes, drinks,cb) => {
     const foodBill = calculateBillAmountForFood(food);
     const clothesBill = calculateBillAmountForClothes(clothes);
     const drinksBill = calculateBillAmountForDrinks(drinks);
     
     const totalBill = foodBill + clothesBill + drinksBill;
     
-    FinalBill("Total Bill", totalBill);
+    cb(totalBill);
 };
 
-finalBillAmount(100, 200, 300);
+finalBillAmount(100, 200, 300, calculateBillForAll);
+finalBillAmount(100, 200, 0, calculateBillForFoodandDrinks);
+finalBillAmount(100, 0, 0, calculateBillForFood);
