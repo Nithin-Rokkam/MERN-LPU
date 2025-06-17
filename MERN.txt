@@ -1,0 +1,15 @@
+MERN
+
+objects: store key value pair 
+
+memory allocation
+Heaps        and         stack 
+  |                        |(After the re allocation the old data is collected by the garbage collector after some tym.
+  |                        | The deallocatipn is same for all primitive datatypes accept objects.)                       
+amount>speed           speed>amount
+
+For objects: there is an issue of a shallow copy, where two objects with same var then any updates are done are reflected in 
+the previous address but reflects like a snap shot.
+
+
+the problem with arrow func is it dosent work with the this-keyword so we need to use the function-key word to resolve the issue.

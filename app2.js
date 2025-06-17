@@ -66,3 +66,55 @@ const finalBillAmount = (food, clothes, drinks,cb) => {
 finalBillAmount(100, 200, 300, calculateBillForAll);
 finalBillAmount(100, 200, 0, calculateBillForFoodandDrinks);
 finalBillAmount(100, 0, 0, calculateBillForFood);
+
+// objects
+const cse7001 ={
+    name: "XYZ",
+    address: "123 Main St",
+    bloodGroup: "O+"
+};
+console.log(cse7001);
+
+const cse7002 = {
+    name: "ABC",
+    address: "456 Elm St",
+    bloodGroup: "A-"
+};
+console.log(cse7002);
+// READ the value
+const StudentName = cse7001.name;
+console.log("Student Name: " + StudentName);
+// Update the value
+cse7001.name = "PQR";
+console.log("Updated Student Name: " + cse7001.name);
+// Add a new property
+cse7001.age = 22;
+console.log("Added Age: " + cse7001.age);
+console.log("Updated Object: ", cse7001);
+// Delete a property
+delete cse7001.bloodGroup;
+console.log("After Deletion: ", cse7001);
+
+delete cse7001.city;
+console.log("After Deletion of city: ", cse7001);
+
+const person ={
+    name:'nithin',
+    height: 165,
+    weight: 64,
+    college: 'LPU',
+    rollNumber: '7001',
+    getBMI: function (){
+        console.log(this.height, this.weight);
+        console.log("Calculating BMI...");
+        if(this.height && this.weight){
+            const heightInMeters = this.height / 100;
+            const bmi = this.weight / (heightInMeters * heightInMeters);
+            console.log("BMI is: " + bmi.toFixed(2));
+        }else{
+            console.log("Height or weight is not defined.");
+        }
+    }
+};
+
+person.getBMI();
