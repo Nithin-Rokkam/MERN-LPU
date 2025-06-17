@@ -101,69 +101,142 @@
 
 //this keyword
 // The 'this' keyword refers to the current object in the context of a method.
-const person ={
-    name:'nithin',
-    height: 165,
-    weight: 64,
-    college: 'LPU',
-    rollNumber: '7001',
-    getBMI: function (){
-        console.log(this.height, this.weight);
-        console.log("Calculating BMI...");
-        let bmi;
-        if(this.height && this.weight){
-            const heightInMeters = this.height / 100;
-            bmi = this.weight / (heightInMeters ** 2);
-            console.log(`BMI for ${this.name} is ${bmi}`);
-        }else{
-            console.log("Height or weight is not defined.");
-        }
-        if(bmi<20){
-            console.log("It seems he is underweight.");
-        }else if(bmi>=20 && bmi<25){
-            console.log("It seems he is healthy.");
-        }else if(bmi>=25 && bmi<30){
-            console.log("It seems he is overweight.");
-        }else{
-            console.log("It seems he is obese.");
-        }
-    }
-};
+// const person ={
+//     name:'nithin',
+//     height: 165,
+//     weight: 64,
+//     college: 'LPU',
+//     rollNumber: '7001',
+//     getBMI: function (){
+//         console.log(this.height, this.weight);
+//         console.log("Calculating BMI...");
+//         let bmi;
+//         if(this.height && this.weight){
+//             const heightInMeters = this.height / 100;
+//             bmi = this.weight / (heightInMeters ** 2);
+//             console.log(`BMI for ${this.name} is ${bmi}`);
+//         }else{
+//             console.log("Height or weight is not defined.");
+//         }
+//         if(bmi<20){
+//             console.log("It seems he is underweight.");
+//         }else if(bmi>=20 && bmi<25){
+//             console.log("It seems he is healthy.");
+//         }else if(bmi>=25 && bmi<30){
+//             console.log("It seems he is overweight.");
+//         }else{
+//             console.log("It seems he is obese.");
+//         }
+//     }
+// };
 
-person.getBMI();
-person.weight = 60;
-person.getBMI();
+// person.getBMI();
+// person.weight = 60;
+// person.getBMI();
 
 // Dynamic value access
 
 
 //mutation
-const person1={
-    name: 'nithin',
-    height: 165,
-    weight: 64,
-    college: 'LPU',
-    rollNumber: '7001'
+// const person1={
+//     name: 'nithin',
+//     height: 165,
+//     weight: 64,
+//     college: 'LPU',
+//     rollNumber: '7001',
+//     marks: {
+//         physics: 80,
+//         chemistry: 90,
+//         maths: 85
+//     }
+// };
+
+// const person2 = person1; // This is a reference, not a copy
+// console.log("Before mutation: ", person1, person2);
+// console.log("Are they same? ", person1 === person2); //return boolean
+// person1.name="raj";
+// person2.name="rajkumar";
+// console.log("After mutation: ", person1, person2);
+// console.log("Are they same? ", person1 === person2); //return boolean
+
+
+// //de-structuring 
+// const {weight, college} = person1;
+// console.log("Weight: ", weight);
+// console.log("College: ", college);
+
+// //spread operator removes the reference i.e the outer layer of the object
+// const person3 = {...person1}; // This creates a shallow copy of person1
+
+// person3.name="Rajesh";
+// person3.marks.physics = 95; // This will not affect person1's marks
+// console.log("After spread operator mutation: ", person1, person3);
+
+//array
+const arr = ["apple", "banana", "cherry"];
+console.log(arr); // [ 'apple', 'banana', 'cherry' ]
+
+const [a, b, c] = arr;
+console.log(b, c); // 'banana', 'cherry'
+
+// Array methods
+arr.push("grape");
+console.log(arr); // [ 'apple', 'banana', 'cherry', 'grape' ]
+
+arr.pop();
+console.log(arr); // [ 'apple', 'banana', 'cherry' ]
+
+arr.shift(); // removes 'apple'
+arr.unshift("orange"); // adds 'orange' to front
+console.log(arr); // [ 'orange', 'banana', 'cherry' ]
+
+arr.splice(1, 1, "kiwi", "lichi"); // replace 'banana' with 'kiwi' and 'lichi'
+console.log(arr); // [ 'orange', 'kiwi', 'lichi', 'cherry' ]
+
+// Searching inside object array
+const arr1 = [
+    {name: "Raj", city: "Delhi"},
+    {name: "Nithin", city: "Vizag"},
+    {name: "Sara", city: "Mumbai"}
+];
+
+// indexOf fails because of object reference mismatch
+console.log(arr1.indexOf({name: "Nithin", city: "Vizag"})); // -1 
+
+// findIndex works
+const index = arr1.findIndex(obj => obj.name === "Nithin" && obj.city === "Vizag");
+console.log(index); //  1
+
+// Custom find with spread and custom function
+const arr2 = ['ab', 'cd', 'ef', 'gh', 'ij'];
+
+const myfunc = (a, b, c, d, e) => {
+    if (a == 'ab' && b == 'cd') {
+        return true;
+    } else return false;
 };
 
-const person2 = person1; // This is a reference, not a copy
-console.log("Before mutation: ", person1, person2);
-console.log("Are they same? ", person1 === person2); //return boolean
-person1.name="raj";
-person2.name="rajkumar";
-console.log("After mutation: ", person1, person2);
-console.log("Are they same? ", person1 === person2); //return boolean
+const elem = arr2.find((value, index, array) => myfunc(...array));
+console.log(elem); // 'ab'
 
+// Correct usage of custom object find
+const arr4 = [
+    {name: "Raj", city: "Delhi", score: 24},
+    {name: "Nithin", city: "Vizag", score: 34},
+    {name: "Sara", city: "Mumbai", score: 45}
+];
 
-//de-structuring
-const {weight, college} = person1;
-console.log("Weight: ", weight);
-console.log("College: ", college);
+// Using find directly
+const ans = arr4.find(obj => obj.name === 'Raj' && obj.city === 'Delhi');
+console.log(ans); // {name: "Raj", city: "Delhi", score: 24}
 
-//spread operator removes the reference i.e the outer layer of the object
-const person3 = {...person1}; // This creates a shallow copy of person1
+const myfunc1 = (obj) => {
+    if(obj.score < 25) {
+        return `${obj.name}: You are failed`;
+    } else {
+        return `${obj.name}: You are passed`;
+    }
+};
 
-person2.name = {...person1};
-person2.name="Rajesh";
-console.log("After spread operator: ", person1, person2, person3);
-console.log("Are they same? ", person1 === person2); //return boolean
+const resarr = arr4.map(myfunc1);
+console.log(resarr); // [true, false, false]
