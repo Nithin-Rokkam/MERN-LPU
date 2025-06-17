@@ -162,3 +162,4 @@ console.log("College: ", college);
 
 //spread operator removes the reference i.e the outer layer of the object
 const person3 = {...person1}; // This creates a shallow copy of person1
+
