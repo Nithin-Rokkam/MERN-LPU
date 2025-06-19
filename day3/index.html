@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Card Left Example</title>
+  <title>recipie store.in</title>
   <style>
     body {
     min-height: 100vh;
@@ -19,18 +19,18 @@ h1 {
       margin-left: 2rem;
     }
 #root {
-      margin-left: 2rem; /* aligns cards to the left with some space */
-      margin-top: 1rem;
-    }
-
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
 .card {
-      border: 2px solid rgba(255, 0, 191, 0.278);
-      background-color: rgba(250, 215, 215, 0.525);
-      border-radius: 1rem;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      width: 300px;
-    }
+  border: 2px solid red;
+  background-color: antiquewhite;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 250px;
+}
 
 header, main {
     width: 100%;
