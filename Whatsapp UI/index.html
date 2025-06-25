@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whatsapp Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="Whatsapp-web-root">
+        <!-- Mobile Navigation Toggle -->
+        <button class="mobile-nav-toggle" id="mobile-nav-toggle">
+            ☰
+        </button>
+
+        <!-- Left Sidebar -->
+        <div id="left-menu">
+            <div class="menu-item active">
+                <span>📄</span>
+            </div>
+            <div class="menu-item">
+                <span>📞</span>
+            </div>
+            <div class="menu-item">
+                <span>📷</span>
+            </div>
+            <div class="menu-item">
+                <span>📁</span>
+            </div>
+        </div>
+
+        <!-- Chat List -->
+        <div id="chat-list">
+            <div class="chat-header">
+                <button class="back-button" id="back-to-menu" style="display: none;">←</button>
+                <h2>Chats</h2>
+                <span>📝</span>
+            </div>
+            <div class="chat-search">
+                <input type="text" class="search-input" placeholder="Search or start new chat">
+            </div>
+            <div id="chat-list-container">
+                <!-- Chat items will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages-container">
+            <div class="chat-messages-header">
+                <button class="back-button" id="back-to-chats" style="display: none;">←</button>
+                <div class="chat-avatar">
+                    <span>👤</span>
+                </div>
+                <div class="chat-info">
+                    <div class="chat-name">Select a chat</div>
+                    <div class="chat-last-message">Click on a chat to start messaging</div>
+                </div>
+            </div>
+            <div class="messages-area" id="messages-area">
+                <!-- Messages will be populated by JavaScript -->
+            </div>
+            <div class="message-input-area">
+                <textarea class="message-input" id="message-input" placeholder="Type a message" rows="1"></textarea>
+                <button class="send-button" id="send-button" disabled>
+                    ➤
+                </button>
+            </div>
+            <div id="splash-screen">
+                <div class="splash-content">
+                    <svg class="whatsapp-logo" viewBox="0 0 90 90">
+                        <path
+                            d="M90,43.841c0,24.213-19.782,43.841-44.182,43.841c-7.747,0-15.025-1.98-21.357-5.455L0,90l7.975-23.522   c-4.023-6.606-6.34-14.354-6.34-22.637C1.635,19.628,21.416,0,45.818,0C70.218,0,90,19.628,90,43.841z M45.818,6.982   c-20.484,0-37.146,16.535-37.146,36.859c0,8.065,2.629,15.534,7.28,21.29l-4.825,14.212l14.7-4.664   c5.558,4.145,12.422,6.635,19.992,6.635c20.481,0,37.146-16.533,37.146-36.857S66.301,6.982,45.818,6.982z M68.129,53.938   c-0.273-0.447-0.994-0.717-2.076-1.254c-1.084-0.537-6.41-3.138-7.4-3.633c-0.993-0.495-1.717-0.742-2.438,0.742   c-0.721,1.479-2.813,3.63-3.447,4.373c-0.632,0.742-1.263,0.842-2.346,0.299c-1.082-0.542-4.573-1.673-8.708-5.334   c-3.219-2.848-5.393-6.364-6.025-7.441c-0.631-1.079-0.066-1.656,0.475-2.191c0.488-0.482,1.084-1.255,1.625-1.883   c0.543-0.628,0.723-1.079,1.082-1.799c0.363-0.721,0.182-1.349-0.09-1.883c-0.27-0.537-2.438-5.825-3.34-8.001   c-0.88-2.129-1.753-1.84-2.438-1.84c-0.632,0-1.354,0-2.076,0c-0.721,0-1.896,0.269-2.889,1.349   c-0.992,1.079-3.789,3.699-3.789,8.963c0,5.263,3.879,10.39,4.422,11.133c0.541,0.742,7.467,11.92,18.5,16.223   C58.2,65.771,58.2,64.331,60.186,64.156c1.984-0.176,6.406-2.599,7.312-5.107C68.4,56.549,68.4,54.386,68.129,53.938z">
+                        </path>
+                    </svg>
+                    <h1>WhatsApp for Windows</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>

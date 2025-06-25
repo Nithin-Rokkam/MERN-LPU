@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="yt-header">
+        <div class="yt-logo">
+            <svg height="32" viewBox="0 0 90 20"><text x="0" y="15" font-size="18" fill="#FF0000" font-family="Arial, sans-serif">YouTube</text></svg>
+        </div>
+        <input class="yt-search" type="text" placeholder="Search">
+        <div class="yt-user">
+            <span class="yt-user-icon">👤</span>
+        </div>
+    </header>
+    <main>
+        <div id="youtube-root">
+            <h2>Trending Videos</h2>
+            <div id="cards-parent" class="video-grid">
+                <!-- Video cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <template id="video-card-template">
+        <div class="video-card">
+            <img class="video-thumbnail" src="" alt="Video Thumbnail">
+            <div class="video-info">
+                <img class="author-thumbnail" src="" alt="Author Thumbnail">
+                <div class="video-details">
+                    <h3 class="video-title"></h3>
+                    <p class="video-author"></p>
+                    <p class="video-stats">
+                        <span class="view-count"></span> • <span class="published-text"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="./homepage.js"></script>
+</body>
+</html>
