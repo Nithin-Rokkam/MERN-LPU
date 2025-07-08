@@ -1,0 +1,33 @@
+const mongoose = require("mongoose");
+
+const { Schema } = mongoose;
+
+const productSchema = new Schema({
+  title: {
+    type: String,
+    required: true,
+    trim: true, // fixed typo
+  },
+  description: String,
+  rating: {
+    type: Number,
+    min: 0,
+    
+    max: 5,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    default: 0,
+  }
+}, {
+  versionKey: false, // Disable __v field
+  timestamps: true, // Automatically manage createdAt and updatedAt fields
+});
+
+const Product = mongoose.model("Product", productSchema);
+
+module.exports = {Product};

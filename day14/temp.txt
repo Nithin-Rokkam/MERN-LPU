@@ -1,0 +1,6 @@
+ABC==>Text normalization and tokenization were performed using the T5 tokenizer.
+  - Input articles were truncated or padded to a maximum length of 512 tokens.
+  - Summaries were truncated or padded to a maximum length of 150 tokens
+  ext normalization and tokenization were performed using the T5 tokenizer.
+  - Input articles were truncated or padded to a maximum length of 512 tokens.
+  - Summaries were truncated or padded to a maximum length of 150 tokens..

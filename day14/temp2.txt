@@ -1,0 +1,3 @@
+name:nani
+class =ABC
+sec = C
